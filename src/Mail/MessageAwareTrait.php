@@ -39,7 +39,7 @@
 
 namespace Soflomo\Mail\Mail;
 
-use Zend\Mail\Message;
+use Laminas\Mail\Message;
 
 trait MessageAwareTrait
 {

@@ -67,7 +67,7 @@ class TransportAwareInitializerTest extends TestCase
         $this->assertInstanceOf('Soflomo\Mail\Mail\TransportAwareInterface', $instance);
 
         $transport = $instance->getLastTransport();
-        $this->assertInstanceOf('Zend\Mail\Transport\TransportInterface', $transport);
+        $this->assertInstanceOf('Laminas\Mail\Transport\TransportInterface', $transport);
     }
 
     public function testInitializerUsesSharedTransport()
@@ -80,8 +80,8 @@ class TransportAwareInitializerTest extends TestCase
         $instance2 = $this->serviceManager->get('TestService2');
         $transport2  = $instance2->getLastTransport();
 
-        $this->assertInstanceOf('Zend\Mail\Transport\TransportInterface', $transport1);
-        $this->assertInstanceOf('Zend\Mail\Transport\TransportInterface', $transport2);
+        $this->assertInstanceOf('Laminas\Mail\Transport\TransportInterface', $transport1);
+        $this->assertInstanceOf('Laminas\Mail\Transport\TransportInterface', $transport2);
 
         $this->assertEquals(spl_object_hash($transport1), spl_object_hash($transport2));
     }

@@ -41,7 +41,7 @@ namespace Soflomo\Mail\Service;
 
 use Interop\Container\ContainerInterface;
 use Soflomo\Mail\Mail\TransportAwareInterface;
-use Zend\ServiceManager\Initializer\InitializerInterface;
+use Laminas\ServiceManager\Initializer\InitializerInterface;
 
 class TransportAwareInitializer implements InitializerInterface
 {

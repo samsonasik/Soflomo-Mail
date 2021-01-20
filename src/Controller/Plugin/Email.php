@@ -40,8 +40,8 @@
 namespace Soflomo\Mail\Controller\Plugin;
 
 use Soflomo\Mail\Service\MailServiceInterface;
-use Zend\Mail\Message;
-use Zend\Mvc\Controller\Plugin\AbstractPlugin;
+use Laminas\Mail\Message;
+use Laminas\Mvc\Controller\Plugin\AbstractPlugin;
 
 /**
  * Email controller plugin as proxy to the email service

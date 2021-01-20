@@ -39,8 +39,8 @@
 
 namespace Soflomo\Mail;
 
-use Zend\Loader;
-use Zend\ModuleManager\Feature;
+use Laminas\Loader;
+use Laminas\ModuleManager\Feature;
 
 class Module implements
     Feature\AutoloaderProviderInterface,

@@ -40,8 +40,8 @@
 namespace Soflomo\Mail\Factory;
 
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 use Soflomo\Mail\Exception\RuntimeException;
 
 class DefaultTransportFactory implements FactoryInterface
@@ -59,9 +59,9 @@ class DefaultTransportFactory implements FactoryInterface
             throw new RuntimeException('Please specify a mail transport type in your configuration');
         }
 
-        // Allow type as FQCN, defaults to Zend\Mail\Transport\* type
+        // Allow type as FQCN, defaults to Laminas\Mail\Transport\* type
         if (!class_exists($name)) {
-            $name = 'Zend\Mail\Transport\\' . ucfirst($name);
+            $name = 'Laminas\Mail\Transport\\' . ucfirst($name);
         }
 
         $transport = new $name;

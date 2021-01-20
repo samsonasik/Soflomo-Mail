@@ -39,7 +39,7 @@
 
 namespace Soflomo\Mail\Mail;
 
-use Zend\Mail\Transport\TransportInterface;
+use Laminas\Mail\Transport\TransportInterface;
 
 interface TransportAwareInterface
 {

@@ -39,8 +39,8 @@
 
 namespace SoflomoTest\Mail\Util;
 
-use Zend\ServiceManager\ServiceManager;
-use Zend\Mvc\Service\ServiceManagerConfig;
+use Laminas\ServiceManager\ServiceManager;
+use Laminas\Mvc\Service\ServiceManagerConfig;
 
 class ServiceManagerFactory
 {
@@ -67,10 +67,10 @@ class ServiceManagerFactory
         $serviceManagerConfig->configureServiceManager($serviceManager);
 
         $serviceManager->setService('ApplicationConfig', static::$config);
-        $serviceManager->setFactory('ServiceListener', 'Zend\Mvc\Service\ServiceListenerFactory');
+        $serviceManager->setFactory('ServiceListener', 'Laminas\Mvc\Service\ServiceListenerFactory');
         $serviceManager->get('ModuleManager')->loadModules();
 
-        /** @var $moduleManager \Zend\ModuleManager\ModuleManager */
+        /** @var $moduleManager \Laminas\ModuleManager\ModuleManager */
         $moduleManager = $serviceManager->get('ModuleManager');
         $moduleManager->loadModules();
         //$serviceManager->setAllowOverride(true);

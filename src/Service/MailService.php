@@ -42,19 +42,19 @@ namespace Soflomo\Mail\Service;
 use Soflomo\Mail\Exception\InvalidArgumentException;
 use Soflomo\Mail\Exception\NotImplementedException;
 
-use Zend\Mime\Part    as MimePart;
-use Zend\Mime\Message as MimeMessage;
-use Zend\Mime\Mime;
+use Laminas\Mime\Part    as MimePart;
+use Laminas\Mime\Message as MimeMessage;
+use Laminas\Mime\Mime;
 
-use Zend\Mail\Message;
-use Zend\Mail\Transport\TransportInterface;
-use Zend\View\Renderer\RendererInterface;
-use Zend\Mime\Part;
+use Laminas\Mail\Message;
+use Laminas\Mail\Transport\TransportInterface;
+use Laminas\View\Renderer\RendererInterface;
+use Laminas\Mime\Part;
 
 /**
  * Mail service class
  *
- * The mail service simplifies the usage of Zend\Mail by a facade
+ * The mail service simplifies the usage of Laminas\Mail by a facade
  * for setting message variables, rendering the body based on a
  * template and then send the mail with the given transport.
  */

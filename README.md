@@ -45,8 +45,8 @@ use Soflomo\Mail:
 Requirements
 ------------
 
- 1. Zend Framework 2: the `Zend\Mail` component
- 2. Zend Framework 2: the `Zend\ServiceManager` component
+ 1. Zend Framework 2: the `Laminas\Mail` component
+ 2. Zend Framework 2: the `Laminas\ServiceManager` component
 
 Usage
 -----
@@ -206,7 +206,7 @@ parameter. You can have a message object which you have already configured
 partially or you need to reuse an instantiated message.
 
 ```php
-// $messaga is an instance of Zend\Mail\Message
+// $messaga is an instance of Laminas\Mail\Message
 // $serviceLocator is an instance of Zend\Service\ServiceManager
 
 $message->setFrom('alice@acme.com');
@@ -258,7 +258,7 @@ config file in the `config/autoload` directory:
 ),
 ```
 
-The 'type' can be a class from `Zend\Mail\Transport\*` (so either "file", "smtp"
+The 'type' can be a class from `Laminas\Mail\Transport\*` (so either "file", "smtp"
 or "sendmail"). The `options` array is used to instantiate an options object
 corresponding to the type (for "smtp" an `SmtpOptions` class is used).
 

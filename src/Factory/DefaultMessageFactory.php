@@ -40,9 +40,9 @@
 namespace Soflomo\Mail\Factory;
 
 use Interop\Container\ContainerInterface;
-use Zend\Mail\Message;
-use Zend\ServiceManager\Factory\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Laminas\Mail\Message;
+use Laminas\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
 
 class DefaultMessageFactory implements FactoryInterface
 {

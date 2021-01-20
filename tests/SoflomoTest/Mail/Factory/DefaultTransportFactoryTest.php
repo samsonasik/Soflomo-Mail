@@ -41,7 +41,7 @@ namespace SoflomoTest\Mail\Service;
 
 use PHPUnit_Framework_TestCase as TestCase;
 use SoflomoTest\Mail\Util\ServiceManagerFactory;
-use Zend\ServiceManager\Exception\ServiceNotCreatedException;
+use Laminas\ServiceManager\Exception\ServiceNotCreatedException;
 
 class DefaultTransportFactoryTest extends TestCase
 {
@@ -53,12 +53,12 @@ class DefaultTransportFactoryTest extends TestCase
         $serviceManager->setAllowOverride(false);
         $transport      = $serviceManager->get('Soflomo\Mail\Transport');
 
-        $this->assertInstanceOf('Zend\Mail\Transport\TransportInterface', $transport);
+        $this->assertInstanceOf('Laminas\Mail\Transport\TransportInterface', $transport);
     }
 
     public function testFactoryRequiresTypeFromConfig()
     {
-        $this->setExpectedException('Zend\ServiceManager\Exception\ServiceNotCreatedException');
+        $this->setExpectedException('Laminas\ServiceManager\Exception\ServiceNotCreatedException');
 
         $serviceManager = ServiceManagerFactory::getServiceManager();
         $transport      = $serviceManager->get('Soflomo\Mail\Transport');
@@ -87,7 +87,7 @@ class DefaultTransportFactoryTest extends TestCase
         $serviceManager->setAllowOverride(false);
 
         $transport = $serviceManager->get('Soflomo\Mail\Transport');
-        $this->assertInstanceof('Zend\Mail\Transport\Sendmail', $transport);
+        $this->assertInstanceof('Laminas\Mail\Transport\Sendmail', $transport);
     }
 
     public function testFactoryUsesOptionsFromConfig()
@@ -103,7 +103,7 @@ class DefaultTransportFactoryTest extends TestCase
         $serviceManager->setAllowOverride(false);
 
         $transport = $serviceManager->get('Soflomo\Mail\Transport');
-        $this->assertInstanceof('Zend\Mail\Transport\Smtp', $transport);
+        $this->assertInstanceof('Laminas\Mail\Transport\Smtp', $transport);
 
         $options = $transport->getOptions();
         $this->assertEquals('Foo', $options->getName());

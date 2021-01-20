@@ -62,7 +62,7 @@ class MessageAwareInitializerTest extends TestCase
         $this->assertInstanceOf('Soflomo\Mail\Mail\MessageAwareInterface', $instance);
 
         $message = $instance->getLastMessage();
-        $this->assertInstanceOf('Zend\Mail\Message', $message);
+        $this->assertInstanceOf('Laminas\Mail\Message', $message);
     }
 
     public function testInitializerDoesNotUseSharedMessage()
@@ -78,8 +78,8 @@ class MessageAwareInitializerTest extends TestCase
         $equals = (spl_object_hash($instance1) === spl_object_hash($instance2));
         $this->assertFalse($equals);
 
-        $this->assertInstanceOf('Zend\Mail\Message', $message1);
-        $this->assertInstanceOf('Zend\Mail\Message', $message2);
+        $this->assertInstanceOf('Laminas\Mail\Message', $message1);
+        $this->assertInstanceOf('Laminas\Mail\Message', $message2);
 
         $equals = (spl_object_hash($message1) === spl_object_hash($message2));
         $this->assertFalse($equals);

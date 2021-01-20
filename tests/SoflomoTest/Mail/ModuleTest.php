@@ -41,7 +41,7 @@ namespace SoflomoTest\Mail\Service;
 
 use PHPUnit_Framework_TestCase as TestCase;
 use Soflomo\Mail\Module;
-use Zend\Loader;
+use Laminas\Loader;
 
 class ModuleTest extends TestCase
 {

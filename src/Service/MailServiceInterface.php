@@ -39,12 +39,12 @@
 
 namespace Soflomo\Mail\Service;
 
-use Zend\Mail\Message;
+use Laminas\Mail\Message;
 
 /**
  * Mail service interface
  *
- * The mail service simplifies the usage of Zend\Mail by a facade
+ * The mail service simplifies the usage of Laminas\Mail by a facade
  * for setting message variables, rendering the body based on a
  * template and then send the mail with the given transport.
  */

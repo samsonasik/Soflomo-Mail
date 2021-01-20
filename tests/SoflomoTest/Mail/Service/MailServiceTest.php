@@ -42,7 +42,7 @@ namespace SoflomoTest\Mail\Service;
 use PHPUnit_Framework_TestCase as TestCase;
 use Soflomo\Mail\Service\MailService;
 use SoflomoTest\Mail\Asset\SimpleTransport;
-use Zend\Mail\Message;
+use Laminas\Mail\Message;
 
 class MailServiceTest extends TestCase
 {
@@ -52,7 +52,7 @@ class MailServiceTest extends TestCase
 
     public function setUp()
     {
-        $this->renderer  = $this->getMockBuilder('Zend\View\Renderer\RendererInterface')->getMock();
+        $this->renderer  = $this->getMockBuilder('Laminas\View\Renderer\RendererInterface')->getMock();
         $this->transport = new SimpleTransport;
         $this->defaultOptions = [
             'to'       => 'john@acme.org',
@@ -76,7 +76,7 @@ class MailServiceTest extends TestCase
         $service->send($this->defaultOptions);
 
         $message = $this->transport->getLastMessage();
-        $this->assertInstanceOf('Zend\Mail\Message', $message);
+        $this->assertInstanceOf('Laminas\Mail\Message', $message);
     }
 
     public function testClonesDefaultMessageFromConstructor()
@@ -260,14 +260,14 @@ class MailServiceTest extends TestCase
 
         $message = $this->transport->getLastMessage();
         $body    = $message->getBody();
-        $this->assertInstanceOf('Zend\Mime\Message', $body);
+        $this->assertInstanceOf('Laminas\Mime\Message', $body);
 
         $parts = $body->getParts();
         $text  = $parts[0];
         $html  = $parts[1];
 
-        $this->assertInstanceOf('Zend\Mime\Part', $text);
-        $this->assertInstanceOf('Zend\Mime\Part', $html);
+        $this->assertInstanceOf('Laminas\Mime\Part', $text);
+        $this->assertInstanceOf('Laminas\Mime\Part', $html);
 
         $this->assertEquals('text/plain', $text->type);
         $this->assertEquals('text/html', $html->type);

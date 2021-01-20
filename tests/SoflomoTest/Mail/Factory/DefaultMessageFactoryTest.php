@@ -48,11 +48,11 @@ class DefaultMessageFactoryTest extends TestCase
     {
         $serviceManager = ServiceManagerFactory::getServiceManager();
         $serviceManager->setAllowOverride(true);
-        $serviceManager->setInvokableClass('Soflomo\Mail\DefaultMessage', 'Zend\Mail\Message');
+        $serviceManager->setInvokableClass('Soflomo\Mail\DefaultMessage', 'Laminas\Mail\Message');
         $serviceManager->setAllowOverride(false);
         $transport      = $serviceManager->get('Soflomo\Mail\Message');
 
-        $this->assertInstanceOf('Zend\Mail\Message', $transport);
+        $this->assertInstanceOf('Laminas\Mail\Message', $transport);
     }
 
     public function testFactoryCreatesMessage()
@@ -60,7 +60,7 @@ class DefaultMessageFactoryTest extends TestCase
         $serviceManager = ServiceManagerFactory::getServiceManager();
         $message        = $serviceManager->get('Soflomo\Mail\DefaultMessage');
 
-        $this->assertInstanceOf('Zend\Mail\Message', $message);
+        $this->assertInstanceOf('Laminas\Mail\Message', $message);
     }
 
     public function testFactorySetsEncodingFromConfig()

@@ -41,7 +41,7 @@ namespace SoflomoTest\Mail\Service;
 
 use PHPUnit_Framework_TestCase as TestCase;
 use SoflomoTest\Mail\Util\ServiceManagerFactory;
-use Zend\Mvc\Controller\PluginManager;
+use Laminas\Mvc\Controller\PluginManager;
 
 class EmailControllerPluginFactoryTest extends TestCase
 {

@@ -39,8 +39,8 @@
 
 namespace SoflomoTest\Mail\Asset;
 
-use Zend\Mail\Transport\TransportInterface;
-use Zend\Mail\Message;
+use Laminas\Mail\Transport\TransportInterface;
+use Laminas\Mail\Message;
 
 class SimpleTransport implements TransportInterface
 {
